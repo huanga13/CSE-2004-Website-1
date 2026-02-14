@@ -48,7 +48,7 @@ function triggerFinalAnimation() {
     endContainer.style.display = "flex";
     endContainer.style.top = "-100%";
     endContainer.style.left = "0";
-    endContainer.style.transition = "top 2s ease-out";
+    endContainer.style.transition = "top 1s ease-out";
 
     void endContainer.offsetWidth;
 
