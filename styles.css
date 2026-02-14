@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'LobsterFugu';
+    src: url('fonts/LobsterFuguRegular-JpaJ7.ttf'), format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'LobsterFugu', sans-serif;
+    color: #A41002;
+    background-color: #fbf5d1;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    padding: 1rem;
+    gap: 3rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.food-square{
+    flex: 1;
+    height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #ff5700;
+    border-radius: 15%;
+    box-shadow: #ab3a00 0px 2px 8px 0px;
+}
+
+.inner-food-square{
+    background-color: #fbf5d1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 85%;
+    height: 65%;
+    border-radius: 15%;
+    box-shadow: #ab3a00 0px 2px 8px 0px;
+}
+
+.inner-food-square img:hover {
+    animation: tilt-shaking 0.25s infinite;
+}
+
+.label {
+    color:white;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+img {
+    display: block;
+    transition: transform 0.25s ease;
+    animation: constant-shaking 0.5s infinite;
+}
+
+.inner-food-square img {
+    transform: translateY(var(--y));
+    z-index: 3;
+}
+
+.pot-middle {
+    width: 49%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.letsmake {
+    font-size: 90px;
+    margin-bottom: 1rem;
+}
+
+.textandpot {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.malatang {
+    font-size: 140px;
+    z-index: 1;
+}
+
+.potgraphic {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spikycircle {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    z-index: 1;
+}
+
+#pot {
+    position: absolute;
+    width: 130%;
+    height: 60%;
+    z-index: 2;
+    transform: rotate(-10deg);
+}
+
+.end-container {
+    background-color: #A41002;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    padding: 4rem;
+    margin: 0 auto;
+    min-height:100%;
+    z-index: 10;
+    display:none;
+    width:100%;
+    position:fixed;
+}
+
+.end-container img {
+    flex: 1;
+    width: 65%;
+    height: 65%;
+}
+
+.end-label {
+    flex: 1;
+    color: pink;
+    font-size: 80px;
+    line-height: 4rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    margin:-1.5rem;
+}
+
+.footerText {
+    font-size: 2rem;
+    color: #A41002;
+}
+
+
+
+#shrimp {
+    max-width: 120%;
+    max-height: 120%;
+}
+
+#fish {
+    max-width: 160%;
+    max-height: 160%;
+}
+
+#cabbage {
+    max-width: 120%;
+    max-height: 120%;
+}
+
+#fishcake {
+    max-width: 140%;
+    max-height: 140%;
+}
+
+#fishball {
+    max-width: 130%;
+    max-height: 130%;
+}
+
+#meat {
+    max-width: 130%;
+    max-height: 130%;
+}
+
+#shrimp { --y: -15px; }
+#fish { --y: -60px; }
+#cabbage { --y: -10px; }
+#fishcake { --y: -40px; }
+#fishball { --y: -30px; }
+#meat { --y: -30px; }
+#pot { --y: 0px; }
+
+@keyframes tilt-shaking {
+  0%   { transform: translateY(var(--y)) scale(1.1) rotate(0deg); }
+  25%  { transform: translateY(var(--y)) scale(1.1) rotate(5deg); }
+  50%  { transform: translateY(var(--y)) scale(1.1) rotate(0deg); }
+  75%  { transform: translateY(var(--y)) scale(1.1) rotate(-5deg); }
+  100% { transform: translateY(var(--y)) scale(1.1) rotate(0deg); }
+}
+
+@keyframes constant-shaking {
+  0%   { transform: translateY(var(--y)) rotate(0deg); }
+  25%  { transform: translateY(var(--y)) rotate(5deg); }
+  50%  { transform: translateY(var(--y)) rotate(0deg); }
+  75%  { transform: translateY(var(--y)) rotate(-5deg); }
+  100% { transform: translateY(var(--y)) rotate(0deg); }
+}
+
