@@ -120,6 +120,15 @@ img {
     transform: rotate(-10deg);
 }
 
+button{
+    border-radius: 15%;
+    background-color: #A41002;
+    color:white;
+    font-family: 'LobsterFugu', sans-serif;
+    font-size:30px;
+    padding: 0.25rem;
+}
+
 .end-container {
     background-color: #A41002;
     display:flex;
@@ -148,10 +157,13 @@ img {
 }
 
 footer {
-    position: fixed;
     bottom: 2rem;
     left: 2rem;
     margin:-1.5rem;
+    display:flex;
+    justify-content: space-between;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 
 .footerText {

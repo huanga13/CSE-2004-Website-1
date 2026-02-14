@@ -7,8 +7,12 @@ var blingAudio = new Audio('audio/Bling.mp3');
 restoAudio.loop = true;
 restoAudio.volume = 0.7;
 
-restoAudio.play();
-cuteAudio.play();
+const audioBtn = document.getElementById("audio");
+
+audioBtn.addEventListener('click', () => {
+    restoAudio.play();
+    cuteAudio.play();
+});
 
 foodItems.forEach(id => {
     const btn = document.getElementById(id);
