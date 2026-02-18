@@ -1,56 +1,52 @@
-const foodItems = ["shrimp", "fish", "cabbage", "fishcake", "fishball", "meat"];
-let clickedFoods = 0;
-var popAudio = new Audio('audio/pop.mp3');
-var restoAudio = new Audio('audio/chinese-restaurant.mp3');
-var cuteAudio = new Audio('audio/yoshi-nova.mp3');
-var blingAudio = new Audio('audio/Bling.mp3');
-restoAudio.loop = true;
-restoAudio.volume = 0.7;
+// For the cha chaan teng scroll
+const ctr_scroll_img = document.getElementById('ctr-scroll-img');
+const left_scroll_img = document.getElementById('left-scroll-img');
+const right_scroll_img = document.getElementById('right-scroll-img');
 
-const audioBtn = document.getElementById("audio");
+const leftBtn = document.getElementById('left-btn');
+const rightBtn = document.getElementById('right-btn');
 
-audioBtn.addEventListener('click', () => {
-    restoAudio.play();
-    cuteAudio.play();
-});
+const title = document.getElementById('card-title');
+const desc = document.getElementById('card-desc');
 
-foodItems.forEach(id => {
-    const btn = document.getElementById(id);
-    btn.addEventListener("click", () => clickFood(id));
-});
+const scroller_items = [
+    {
+        img: "assets/macaroni.png",
+        title: "MACARONI SOUP",
+        desc: "A popular Hong Kong breakfast with savory broth and spam."
+    },
+    {
+        img: "assets/sausage-egg.png",
+        title: "BREAKFAST SET",
+        desc: "Pan-fried sausage served with scrambled egg."
+    },
+    {
+        img: "assets/eggtoast.png",
+        title: "EGG TOAST",
+        desc: "Soft scrambled eggs on crispy buttered toast."
+    }
+];
 
-function clickFood(elementId) {
-    const food = document.getElementById(elementId);
-    food.style.pointerEvents = "none";
+let ctr_index = 1;  // Start the center image at sausage egg
+function updateScroller() {
+    let left_index = (ctr_index - 1 + scroller_items.length) % scroller_items.length;
+    let right_index = (ctr_index + 1) % scroller_items.length;
+    left_scroll_img.src = scroller_items[left_index].img;
+    ctr_scroll_img.src = scroller_items[ctr_index].img;
+    right_scroll_img.src = scroller_items[right_index].img;
 
-    food.style.transition = "opacity 0.25s ease";
-    food.style.transform = "scale(0)";
-    food.style.opacity = 0;
-    popAudio.play();
-
-    setTimeout(() => {
-        food.style.display = "none";
-
-        clickedFoods++;
-        if (clickedFoods === foodItems.length) {
-            triggerFinalAnimation();
-        }
-    }, 1000);
+    title.textContent = scroller_items[ctr_index].title;
+    desc.textContent = scroller_items[ctr_index].desc;
 }
 
+leftBtn.addEventListener("click", () => {
+    ctr_index = (ctr_index - 1 + scroller_items.length) % scroller_items.length;
+    updateScroller();
+});
 
-function triggerFinalAnimation() {
-    console.log("finito");
-    blingAudio.play();
+rightBtn.addEventListener("click", () => {
+    ctr_index = (ctr_index + 1) % scroller_items.length;
+    updateScroller();
+});
 
-    const endContainer = document.querySelector('.end-container');
-
-    endContainer.style.display = "flex";
-    endContainer.style.top = "-100%";
-    endContainer.style.left = "0";
-    endContainer.style.transition = "top 1s ease-out";
-
-    void endContainer.offsetWidth;
-
-    endContainer.style.top = "0";
-}
+updateScroller();

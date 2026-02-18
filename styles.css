@@ -1,229 +1,262 @@
-@font-face {
-    font-family: 'LobsterFugu';
-    src: url('fonts/LobsterFuguRegular-JpaJ7.ttf'), format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Outfit';
+    src: url('fonts/Outfit-VariableFont_wght.ttf'), format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* defining my colors so I can change easily */
+:root {
+    --bkgd-color: #094938;
+    --light-color: #E7CBA4;
+    --contrast-color: #BA474C;
+}
+
 body {
-    font-family: 'LobsterFugu', sans-serif;
-    color: #A41002;
-    background-color: #fbf5d1;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bkgd-color);
+    overflow-x: hidden;
 }
 
-.container{
-    display: flex;
-    justify-content: space-around;
-    width: 90%;
-    padding: 1rem;
-    gap: 3rem;
-    margin: 0 auto;
-    align-items: center;
+h2 {
+    font-size: 4.5rem;
+    font-weight: bold;
 }
+p {font-size: 2rem;}
+a {cursor: pointer;}
 
-.food-square{
-    flex: 1;
-    height: 315px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #ff5700;
-    border-radius: 15%;
-    box-shadow: #ab3a00 0px 2px 8px 0px;
-}
-
-.inner-food-square{
-    background-color: #fbf5d1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 85%;
-    height: 65%;
-    border-radius: 15%;
-    box-shadow: #ab3a00 0px 2px 8px 0px;
-}
-
-.inner-food-square img:hover {
-    animation: tilt-shaking 0.25s infinite;
-}
-
-.label {
-    color:white;
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
-}
-
-img {
-    display: block;
-    transition: transform 0.25s ease;
-    animation: constant-shaking 0.5s infinite;
-}
-
-.inner-food-square img {
-    transform: translateY(var(--y));
-    z-index: 3;
-}
-
-.pot-middle {
-    width: 49%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.letsmake {
-    font-size: 90px;
-    margin-bottom: 1rem;
-}
-
-.textandpot {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.malatang {
-    font-size: 140px;
-    z-index: 1;
-}
-
-.potgraphic {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#spikycircle {
-    position: absolute;
-    width: 110%;
-    height: 110%;
-    z-index: 1;
-}
-
-#pot {
-    position: absolute;
-    width: 130%;
-    height: 60%;
-    z-index: 2;
-    transform: rotate(-10deg);
-}
-
-button{
-    border-radius: 15%;
-    background-color: #A41002;
-    color:white;
-    font-family: 'LobsterFugu', sans-serif;
-    font-size:30px;
-    padding: 0.25rem;
-}
-
-.end-container {
-    background-color: #A41002;
-    display:flex;
-    justify-content: space-around;
-    align-items:center;
-    padding: 4rem;
-    margin: 0 auto;
-    min-height:100%;
-    z-index: 10;
-    display:none;
-    width:100%;
-    position:fixed;
-}
-
-.end-container img {
-    flex: 1;
-    width: 65%;
-    height: 65%;
-}
-
-.end-label {
-    flex: 1;
-    color: pink;
-    font-size: 80px;
-    line-height: 4rem;
-}
-
-footer {
-    bottom: 2rem;
-    left: 2rem;
-    margin:-1.5rem;
+nav {
     display:flex;
     justify-content: space-between;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    align-items: center;
+    z-index:2;
+    margin:0 auto;
+    color: #E7CBA4;
+    margin:1.25rem;
+    font-size:3rem;
+}
+nav a {
+    color: #E7CBA4;
+    text-decoration: none;
+    font-size:1.5rem;
+}
+nav .nav-options {
+    display:flex;
+    gap:1rem;
 }
 
-.footerText {
+#eggtart-video {
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+#eggtart-video video {
+    height: 95vh;
+    width: 95vw;
+    background-position:aboslute;
+    z-index:1;
+    object-fit:cover;
+    border-radius:40px;
+}
+#eggtart-video .content {
+    height: 100vh;
+    width: 100%;
+    z-index:2;
+    position:absolute;
+    top:0;
+    left:0;
+    text-align: center;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color: var(--bkgd-color);
+}
+#eggtart-video h1{
+    font-size:8rem;
+}
+#eggtart-video h3{
+    font-size:3rem;
+}
+
+#scroller-container .img-card-wrapper {
+    display:flex;
+    justify-content: center;
+    padding: 5rem;
+    align-items: flex-end;
+    gap:5rem;
+}
+#scroller-container .img-card-wrapper img{
+    width:35%;
+    height:35%;
+}
+#scroller-container .img-card-wrapper #ctr-scroll-img{
+    width:50%;
+    height:auto;
+}
+.bottom-card-wrapper {
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    gap:4rem;
+    color: var(--light-color);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+.bottom-card-wrapper #card-title{
+    margin-bottom:1rem;
+}
+.bottom-card-wrapper button {
+    display:block;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--bkgd-color);
+    border: 3px solid var(--contrast-color);
+    border-radius: 100%;
+    color: var(--contrast-color);
+    font-size: 1.5rem;
+}
+
+#dim-sum {
+    background-color: var(--light-color);
+    padding: 1rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-radius: 40px;
+    color: var(--contrast-color);
+}
+hr {
+    border: none;
+    border-top: 2px solid var(--contrast-color);
+    margin: 1rem 0;
+}
+#dim-sum h3{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#dim-sum p{
+    font-size: 1.5rem;
+}
+.dimsum-info {
+    display:flex;
+    justify-content: space-between;
+}
+.dimsum-piece {
+    width: 33%;
+}
+.dimsum-imgs {
+    display:flex;
+    justify-content: center;
+    gap: 1rem;
+}
+#dim-sum img {
+    border-radius: 15px;
+    width:32%;
+}
+
+#sweets {
+    color: var(--light-color);
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+#sweets-list {
+    display:flex;
+    align-items: center;
+    margin-bottom:2re
+}
+#sweets-list img {
+    width:55%;
+    border-radius: 0px 40px 40px 0px;
+}
+.sweets-info {
+    padding: 4rem;
     font-size: 2rem;
-    color: #A41002;
+}
+
+#sweets table {
+    margin:2rem;
+    width: 80%;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    color: var(--light-color);
+    border-collapse: collapse;
+}
+#sweets th, #sweets td {
+    padding: 1rem;
+    text-align: left;
+    border: 2px solid var(--light-color); 
+}
+#sweets th {
+    background-color: var(--contrast-color);
+    color: var(--light-color);
+    font-size: 2rem;
+}
+
+#contact {
+    background-color: var(--light-color);
+    color: var(--bkgd-color);
+    padding: 2rem 1rem;
+    width: 50%;
+    margin: 2rem auto;
+}
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+#email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#email-form label {
+    font-size: 1.5rem;
+}
+#email-form input, #email-form textarea {
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    border: 2px solid var(--bkgd-color);
+    width: 100%;
+    color: var(--bkgd-color);
+}
+#email-form button {
+    padding: 0.75rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--contrast-color);
+    color: var(--light-color);
+    transition: 0.3s;
 }
 
 
+/* i did media query for the egg tart opening video */
+@media (max-width: 600px) {
+    h3, nav a {
+        font-size: 1rem;
+    }
+    #eggtart-video h1{
+        font-size:6rem;
+        line-height:0.9;
+    }
+    #eggtart-video h3{
+        font-size:2rem;
+    }
 
-#shrimp {
-    max-width: 120%;
-    max-height: 120%;
+    nav {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav .nav-options {
+        display:flex;
+        gap:0.75rem;
+    }
 }
-
-#fish {
-    max-width: 160%;
-    max-height: 160%;
-}
-
-#cabbage {
-    max-width: 120%;
-    max-height: 120%;
-}
-
-#fishcake {
-    max-width: 140%;
-    max-height: 140%;
-}
-
-#fishball {
-    max-width: 130%;
-    max-height: 130%;
-}
-
-#meat {
-    max-width: 130%;
-    max-height: 130%;
-}
-
-#shrimp { --y: -15px; }
-#fish { --y: -60px; }
-#cabbage { --y: -10px; }
-#fishcake { --y: -40px; }
-#fishball { --y: -30px; }
-#meat { --y: -30px; }
-#pot { --y: 0px; }
-
-@keyframes tilt-shaking {
-  0%   { transform: translateY(var(--y)) scale(1.1) rotate(0deg); }
-  25%  { transform: translateY(var(--y)) scale(1.1) rotate(5deg); }
-  50%  { transform: translateY(var(--y)) scale(1.1) rotate(0deg); }
-  75%  { transform: translateY(var(--y)) scale(1.1) rotate(-5deg); }
-  100% { transform: translateY(var(--y)) scale(1.1) rotate(0deg); }
-}
-
-@keyframes constant-shaking {
-  0%   { transform: translateY(var(--y)) rotate(0deg); }
-  25%  { transform: translateY(var(--y)) rotate(5deg); }
-  50%  { transform: translateY(var(--y)) rotate(0deg); }
-  75%  { transform: translateY(var(--y)) rotate(-5deg); }
-  100% { transform: translateY(var(--y)) rotate(0deg); }
-}
-

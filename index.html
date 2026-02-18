@@ -1,81 +1,143 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hong Kong</title>
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="end-container">
-        <div class="end-label">happy valentine's!!!</div>
-        <img id="end-pot" src="assets/endpot.png">
-        <div class="end-label">thank you for taking me out to movoc that first time. to many more malatangs!</div>
-    </div>
+    <!-- nav bar -->
+    <nav>
+        <div>
+            <h3>HK</h3>
+        </div>
+        <div class="nav-options">
+            <a href="#scroller-container">cha chaan teng</a>
+            <a href="#dim-sum">dim sum</a>
+            <a href="#sweets">sweets</a>
+        </div>
+    </nav>
 
-    <div class="container">
-        <div class="food-square">
-            <div class="label">SHRIMP</div>
-            <div class="inner-food-square">
-                <img id="shrimp" src="assets/shrimppng.png">
+    <!-- landing page -->
+    <section id="eggtart-video">
+        <video autoplay loop muted>
+            <source src="assets/eggtart-making.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <div class="container">
+                <h3>the food of</h3>
+                <h1>HONG KONG</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- cha chaan teng scroller -->
+    <section id="scroller-container">
+        <div class="img-card-wrapper">
+            <img id="left-scroll-img" alt="Left scroll image">
+            <img id="ctr-scroll-img" alt="Center scroll image">
+            <img id="right-scroll-img" alt="Right scroll image">
+        </div>
+        <div class="bottom-card-wrapper">
+            <button class="scroll-btn" id="left-btn">&#10094;</button>
+            <div class="card-info">
+                <h2 id="card-title"></h2>
+                <p id="card-desc"></p>
+            </div>
+            <button class="scroll-btn" id="right-btn">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- dim sum -->
+    <section id="dim-sum">
+        <h2>DIM SUM</h2>
+        <hr>
+        <div class="dimsum-imgs">
+            <img src="assets/charsiu.jpg" alt="Char Siu Bun">
+            <img src="assets/dumpling.webp" alt="Dumpling">
+            <img src="assets/hargow.jpg" alt="Har Gow">
+        </div>
+        <div class="dimsum-info">
+            <div class="dimsum-piece">
+                <h3>char siu bao</h3>
+                <p>Char siu is Cantonese-style barbecued pork marinated in a sweet and savory sauce 
+                of soy, hoisin, honey, and five-spice. It is roasted until glossy and slightly caramelized at the edges.
+                The result is tender meat with a signature reddish glaze.</p>
+            </div>
+            <div class="dimsum-piece">
+                <h3>har gow</h3>
+                <p>Har gow are Cantonese dumplings filled with plump, juicy shrimp. 
+                Their translucent, slightly chewy wrappers are pleated by hand 
+                and steamed until tender.</p>
+            </div>
+            <div class="dimsum-piece">
+                <h3>xiao long bao</h3>
+                <p>Xiao long bao are thin-skinned dumplings filled with seasoned pork and rich, savory broth. 
+                When steamed, the gelatinized stock melts into soup inside the wrapper.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- sweets -->
+    <section id="sweets">
+        <div id="sweets-list">
+            <img src="assets/eggtart.jpg" alt="Egg Tart">
+            <div class="sweets-info">
+                <h2>Best Sweets to Try</h2>
+                <ol>
+                    <li>Egg Tart</li>
+                    <li>Egg Waffle</li>
+                    <li>Milk Tea</li>
+                </ol>
             </div>
         </div>
 
-        <div class="food-square">
-            <div class="label">FISH</div>
-            <div class="inner-food-square">
-                <img id="fish" src="assets/fish.png">
-            </div>
+        <div class="sweets-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sweet</th>
+                        <th>Best Restaurants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Egg Tart</td>
+                        <td>Gold Garden Cafe</td>
+                    </tr>
+                    <tr>
+                        <td>Egg Waffle</td>
+                        <td>Hung Kee Egg Waffles</td>
+                    </tr>
+                    <tr>
+                        <td>Milk Tea</td>
+                        <td>Gold Garden Cafe</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </section>
 
-        <div class="food-square">
-            <div class="label">CABBAGE</div>
-            <div class="inner-food-square">
-                <img id="cabbage" src="assets/lettucepng.png">
-            </div>
+    <!-- contact form -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Email Us!</h2>
+            <form id="email-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
         </div>
-
-        <div class="food-square">
-            <div class="label">FISH CAKE</div>
-            <div class="inner-food-square">
-                <img id="fishcake" src="assets/fishcakepng.png">
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="food-square">
-            <div class="label">FISH BALL</div>
-            <div class="inner-food-square">
-                <img id="fishball" src="assets/fishcake.png">
-            </div>
-        </div>
-
-        <div class="pot-middle">
-            <div class="letsmake">LET'S MAKE</div>
-            <div class="textandpot">
-                <div class="malatang">MALA</div>
-
-                <div class="potgraphic">
-                    <img id="spikycircle" src="assets/spiky.png">
-                    <img id="pot" src="assets/potpng.png">
-                </div>
-
-                <span class="malatang">TANG</span>
-            </div>
-        </div>
-
-        <div class="food-square">
-            <div class="label">BEEF ROLL</div>
-            <div class="inner-food-square">
-                <img id="meat" src="assets/meat1.png">
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footerText">Click to add ingredients!</div>
-        <button id="audio">play audio</button>
-    </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>
